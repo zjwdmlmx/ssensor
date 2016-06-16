@@ -2,8 +2,9 @@ package controllers
 
 import (
 	"io"
-	"mime"
 	"net/http"
+
+	"github.com/zjwdmlmx/ssensor/mime"
 )
 
 func writeJSON(writer http.ResponseWriter, v interface{}) (ok bool) {

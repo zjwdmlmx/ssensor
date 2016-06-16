@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 	"os"
-	"router"
 
 	"github.com/gorilla/handlers"
+	"github.com/zjwdmlmx/ssensor/router"
 )
 
 func main() {

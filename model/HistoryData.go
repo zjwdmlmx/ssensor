@@ -1,8 +1,9 @@
 package model
 
 import (
-	"db"
 	"time"
+
+	"github.com/zjwdmlmx/ssensor/db"
 )
 
 type HistoryData struct {

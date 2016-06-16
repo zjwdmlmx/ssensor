@@ -2,11 +2,12 @@ package controllers
 
 import (
 	"io"
-	"mime"
 	"mime/multipart"
-	"model"
 	"net/http"
-	"proto"
+
+	"github.com/zjwdmlmx/ssensor/mime"
+	"github.com/zjwdmlmx/ssensor/model"
+	"github.com/zjwdmlmx/ssensor/proto"
 )
 
 func SensorDataJsonHandler(writer http.ResponseWriter, request *http.Request) {

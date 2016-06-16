@@ -2,11 +2,12 @@ package controllers
 
 import (
 	"io"
-	"mime"
-	"model"
 	"net/http"
-	"proto"
 	"time"
+
+	"github.com/zjwdmlmx/ssensor/mime"
+	"github.com/zjwdmlmx/ssensor/model"
+	"github.com/zjwdmlmx/ssensor/proto"
 )
 
 func HistoryJsonHandler(writer http.ResponseWriter, request *http.Request) {

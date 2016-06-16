@@ -1,6 +1,6 @@
 package model
 
-import "db"
+import "github.com/zjwdmlmx/ssensor/db"
 
 type SensorData struct {
 	Id    uint64  `gorm:"primary_key;AUTO_INCREMENT"`

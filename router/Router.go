@@ -1,9 +1,8 @@
 package router
 
 import (
-	"controllers"
-
 	"github.com/gorilla/mux"
+	"github.com/zjwdmlmx/ssensor/controllers"
 )
 
 var R *mux.Router
