@@ -145,7 +145,7 @@ func copyDB() (newPath string, err error) {
 
 		defer newFile.Close()
 
-		if err = global.R.RPush("FileCleaner", fmt.Sprintf("%s %d", newPath, 6)).Err(); err != nil {
+		if err = global.R.RPush("FileCleaner", fmt.Sprintf("%s %d", newPath, 3600*6)).Err(); err != nil {
 			return
 		}
 
