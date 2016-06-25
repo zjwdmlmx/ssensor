@@ -25,7 +25,9 @@ func main() {
 		}
 
 		if err != nil {
-			panic(err)
+			log.Println(err)
+			time.Sleep(time.Second * 30)
+			continue
 		}
 
 		fileInfo := strings.Split(result[1], " ")
