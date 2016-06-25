@@ -22,4 +22,6 @@ func init() {
 		HeadersRegexp("Content-Type", "application/json(\\;.*){0,1}").
 		Methods("POST")
 
+	R.HandleFunc("/data", controllers.DataDownloadHandler).
+		Methods("GET")
 }

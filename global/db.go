@@ -1,4 +1,4 @@
-package db
+package global
 
 import (
 	"github.com/jinzhu/gorm"
@@ -7,11 +7,19 @@ import (
 
 var DB *gorm.DB
 
-func init() {
+const DBPath = "/var/lib/ssensor/data.db"
+
+func initDB() {
 	var err error
-	DB, err = gorm.Open("sqlite3", "/var/lib/ssensor/data.db")
+
+	DB, err = gorm.Open("sqlite3", DBPath)
 
 	if err != nil {
 		panic("failed to connect to databases")
 	}
+}
+
+func init() {
+	initDB()
+	initRedis()
 }

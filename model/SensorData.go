@@ -1,6 +1,6 @@
 package model
 
-import "github.com/zjwdmlmx/ssensor/db"
+import "github.com/zjwdmlmx/ssensor/global"
 
 type SensorData struct {
 	Id    uint64  `gorm:"primary_key;AUTO_INCREMENT"`
@@ -17,7 +17,7 @@ type sensorDataModel struct{}
 var SensorDataModel sensorDataModel
 
 func (sensorDataModel) CreateManay(rows []SensorData) {
-	tx := db.DB.Begin()
+	tx := global.DB.Begin()
 
 	for _, row := range rows {
 		tx.Create(&row)
@@ -29,5 +29,5 @@ func (sensorDataModel) CreateManay(rows []SensorData) {
 }
 
 func (sensorDataModel) CreateOne(row *SensorData) {
-	db.DB.Create(row)
+	global.DB.Create(row)
 }

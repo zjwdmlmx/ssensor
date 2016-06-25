@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/zjwdmlmx/ssensor/db"
+	"github.com/zjwdmlmx/ssensor/global"
 )
 
 type HistoryData struct {
@@ -20,10 +20,10 @@ type historyDataModel struct{}
 var HistoryDataModel historyDataModel
 
 func (historyDataModel) CreateManay(rows []HistoryData) {
-	tx := db.DB.Begin()
+	tx := global.DB.Begin()
 
 	for _, row := range rows {
-		db.DB.Create(&row)
+		global.DB.Create(&row)
 	}
 
 	defer func() {
@@ -32,5 +32,5 @@ func (historyDataModel) CreateManay(rows []HistoryData) {
 }
 
 func (historyDataModel) CreateOne(row *HistoryData) {
-	db.DB.Create(row)
+	global.DB.Create(row)
 }
