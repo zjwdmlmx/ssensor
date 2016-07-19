@@ -24,4 +24,8 @@ func init() {
 
 	R.HandleFunc("/data", controllers.DataDownloadHandler).
 		Methods("GET")
+
+	R.HandleFunc("/user", controllers.RegistUserHandler).
+		HeadersRegexp("Content-Type", "application/json(\\;.*){0,1}").
+		Methods("POST")
 }

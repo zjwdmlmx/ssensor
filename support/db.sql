@@ -1,6 +1,14 @@
+drop table if exists `users`;
+
+create table `users`(
+    `uid`  char(64) primary key
+);
+
+create index `users_index_uid` on `users`(`uid`);
+
 drop table if exists `sensor_data`;
 
-create table sensor_data(
+create table `sensor_data`(
     `id`    integer primary key AUTOINCREMENT,
     `uid`   char(64) not null,
     `x`     double not null,
@@ -22,7 +30,7 @@ create index `sensor_data_index_state` on `sensor_data`(`state`);
 
 drop table if exists `history_data`;
 
-create table history_data(
+create table `history_data`(
     `id`        integer primary key AUTOINCREMENT,
     `uid`       char(64) not null,
     `latitude`  double not null,

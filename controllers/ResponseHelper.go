@@ -12,6 +12,7 @@ import (
 	"github.com/zjwdmlmx/ssensor/mime"
 )
 
+// write a json response
 func writeJSON(writer http.ResponseWriter, v interface{}) (ok bool) {
 	res, err := mime.JSONString(v)
 	ok = true
@@ -41,6 +42,7 @@ func readForm(writer http.ResponseWriter, request *http.Request) (ok bool) {
 	return
 }
 
+// write a file to client
 func writeFile(writer http.ResponseWriter, path string, offset int64) (ok bool) {
 	ok = true
 	file, err := os.Open(path)
@@ -145,6 +147,7 @@ func copyDB() (newPath string, err error) {
 
 		defer newFile.Close()
 
+		// push a timer task
 		if err = global.R.RPush("FileCleaner", fmt.Sprintf("%s %d", newPath, 3600*6)).Err(); err != nil {
 			return
 		}

@@ -14,5 +14,5 @@ func main() {
 		runtime.GOMAXPROCS(cpu - 1)
 	}
 
-	http.ListenAndServe(":5050", handlers.LoggingHandler(os.Stdout, router.R))
+	http.ListenAndServe(":80", handlers.LoggingHandler(os.Stdout, router.R))
 }
